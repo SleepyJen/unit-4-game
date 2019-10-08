@@ -1,0 +1,22 @@
+.head{
+    height: 10vh;
+    width: 100%;
+    background-color: aquamarine;
+    display: table;
+}
+.text-header{
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    display: table-cell;
+    padding-top: 12px;
+    font-family: 'Indie Flower', cursive;
+}
+
+body{
+    position: relative;
+}
+.jumbotron{
+    position: absolute;
+    margin-top: 5%;
+}
