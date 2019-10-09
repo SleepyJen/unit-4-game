@@ -3,7 +3,7 @@ $(document).ready(function () {
     var toggle = true;
     var ruby, redDiamond, diamond, tearDrop, randGenerator;
     var total = 0;
-    var checkOn = true;
+    var checkOn = false;
 
     var startButton = $('.btn');
     var randNum = $('#number-chosen');
@@ -15,7 +15,6 @@ $(document).ready(function () {
     var chosenText = $('#chosen');
 
     startButton.on('click', function () {
-
         if (toggle) {
             randGenerator = Math.floor(Math.random() * 100 + 1);
             ruby = Math.floor(Math.random() * 10 + 1);
@@ -24,16 +23,17 @@ $(document).ready(function () {
             tearDrop = Math.floor(Math.random() * 10 + 1);
             randNum.text(randGenerator);
 
-            checkOn = true;
-
             startButton.text("Click to Reset");
             toggle = false;
+
+            checkOn = true;
         } else {
             startButton.text("Click to Start");
             toggle = true;
         }
 
         if (toggle) {
+            checkOn = true;
             randNum.text("0");
             total = 0;
             chosenText.text("Your number: ");
@@ -42,48 +42,55 @@ $(document).ready(function () {
     });
 
     r.on('click', function () {
-        total += ruby;
-        chosenText.text("Your number: " + total);
-        check();
-        if (!checkOn) {
-            r.off('click');
+        r.disable = checkOn;
+        if (checkOn) {
+            total += ruby;
+            chosenText.text("Your number: " + total);
+            check();
         }
+        console.log(ruby);
     });
 
     rD.on('click', function () {
-        total += redDiamond;
-        chosenText.text("Your number " + total);
-        check();
-        if (!checkOn) {
-            rD.off('click');
+        rD.disable = checkOn;
+        if (checkOn) {
+            total += redDiamond;
+            chosenText.text("Your number " + total);
+            check();
         }
+        console.log(redDiamond);
     });
 
     d.on('click', function () {
-        total += diamond;
-        chosenText.text("Your number " + total);
-        check();
-        if (!checkOn) {
-            d.off('click');
+        d.disable = checkOn;
+        if (checkOn) {
+            d.disable = checkOn;
+            total += diamond;
+            chosenText.text("Your number " + total);
+            check();
         }
+        console.log(diamond);
     });
 
     tD.on('click', function () {
-        total += tearDrop;
-        chosenText.text("Your number " + total);
-        check();
-        if (!checkOn) {
-            tD.off('click');
+        tD.disable = checkOn;
+        if (checkOn) {
+            total += tearDrop;
+            chosenText.text("Your number " + total);
+            check();
         }
+        console.log(tearDrop);
     });
 
     function check() {
-        if (total > randGenerator) {
+        if (total > randGenerator && !toggle) {
             endGame.text("Sorry!! you lost >< Try again!!");
             checkOn = false;
-        } else if (total === randGenerator) {
+        } else if (total === randGenerator && !toggle) {
             endGame.text("Congrats!! you win!! Click restart to restart the Game.");
             checkOn = false;
+        } else {
+            checkOn = true;
         }
     }
 });
