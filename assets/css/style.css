@@ -45,8 +45,13 @@ body{
     padding-top: 20px;
 }
 
+.endGame{
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+}
+
 .number, #number-chosen, .lead,
-.jewels{
+.jewels, .endGame{
     text-align: center;
 }
 
