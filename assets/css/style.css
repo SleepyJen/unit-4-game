@@ -36,7 +36,25 @@ body{
     font-family: 'Satisfy', cursive;
 }
 
+#number-chosen{
+    font-size: 30px;
+}
+
 .lead{
     font-family: 'Satisfy', cursive;
     padding-top: 20px;
+}
+
+.number, #number-chosen, .lead{
+    text-align: center;
+}
+
+.icon{
+    height: 80px;
+    width: 80px;
+    margin-left: 100px;
+}
+.jewels{
+    padding: 25px;
+    margin-left: 50px;
 }
