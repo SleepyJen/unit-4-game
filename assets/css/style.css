@@ -1,9 +1,8 @@
 .head{
     height: 10vh;
     width: 100%;
-    background-color: rgb(60, 12, 138);
+    background-color: rgba(60, 12, 138, 0.6);
     display: table;
-    opacity: 0.6;
 }
 .text-header{
     font-weight: bold;
@@ -12,6 +11,7 @@
     display: table-cell;
     padding-top: 12px;
     font-family: 'Indie Flower', cursive;
+    opacity: 0.9;
     color: #ffffff;
 }
 
@@ -22,7 +22,21 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.jumbotron{
+
+.box{
+    background-color: rgb(248, 248, 248);
     position: absolute;
     margin-top: 5%;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.number{
+    font-size: 40px;
+    font-family: 'Satisfy', cursive;
+}
+
+.lead{
+    font-family: 'Satisfy', cursive;
+    padding-top: 20px;
 }
