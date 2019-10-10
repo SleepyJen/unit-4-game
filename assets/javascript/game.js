@@ -4,6 +4,7 @@ $(document).ready(function () {
     var ruby, redDiamond, diamond, tearDrop, randGenerator;
     var total = 0;
     var checkOn = false;
+    var win = 0, lose = 0;
 
     var startButton = $('.btn');
     var randNum = $('#number-chosen');
@@ -13,6 +14,11 @@ $(document).ready(function () {
     var tD = $('#tearDrop');
     var endGame = $('.endGame');
     var chosenText = $('#chosen');
+    var won = $('.win');
+    var lost = $('.lose');
+
+    won.text("Wins: " + win);
+    lost.text("Lost: " + lose);
 
     startButton.on('click', function () {
         if (toggle) {
@@ -33,7 +39,6 @@ $(document).ready(function () {
         }
 
         if (toggle) {
-            checkOn = true;
             randNum.text("0");
             total = 0;
             chosenText.text("Your number: ");
@@ -85,9 +90,15 @@ $(document).ready(function () {
     function check() {
         if (total > randGenerator && !toggle) {
             endGame.text("Sorry!! you lost >< Try again!!");
+            lose++;
             checkOn = false;
+            won.text("Wins: " + win);
+            lost.text("Lost: " + lose);
         } else if (total === randGenerator && !toggle) {
             endGame.text("Congrats!! you win!! Click restart to restart the Game.");
+            win++;
+            won.text("Wins: " + win);
+            lost.text("Lost: " + lose);
             checkOn = false;
         } else {
             checkOn = true;

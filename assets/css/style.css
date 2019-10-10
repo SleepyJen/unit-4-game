@@ -40,9 +40,17 @@ body{
     font-size: 30px;
 }
 
-.lead{
+.lead, .win, .lose{
     font-family: 'Satisfy', cursive;
     padding-top: 20px;
+}
+
+#lead-color{
+    color: rgb(16, 143, 16);
+}
+
+.win, .lose{
+    color: red;
 }
 
 .endGame{
@@ -51,7 +59,7 @@ body{
 }
 
 .number, #number-chosen, .lead,
-.jewels, .endGame{
+.jewels, .endGame, .win-lose{
     text-align: center;
 }
 
